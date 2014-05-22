@@ -1,0 +1,35 @@
+<h1>Listing recipes</h1>
+
+
+<div class="table-responsive">
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Recipe type</th>
+      <th>Description</th>
+      <th>Preparation</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.name %></td>
+        <td><%= recipe.recipe_type %></td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.preparation %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></button></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+
+<p><a class="btn btn-primary btn-lg" href="/recipes/new">Nieuw Recept</a></p>
+
+<% link_to 'New Recipe', new_recipe_path %>

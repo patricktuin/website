@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="page-header">
+    <h1><%= @guest.name %></h1>
+  </div>
+
+    <%= form_for @guest do |f| %>
+    <p>
+        <%= f.label :Aanwezigheid %><br><br>
+        <%= f.radio_button :attend, true %> Ik kom <br><br>
+        <%= f.radio_button :attend, false %> Ik kom niet<br><br>
+      </p>
+     
+      <p>
+        <%= f.submit 'Update'%>
+      </p>
+      </tr>
+    <% end %>
+
+
+
+
+</div>
+
